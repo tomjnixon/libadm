@@ -33,4 +33,8 @@ TEST_CASE("adm_time") {
     REQUIRE(formatTimecode(parseTimecode("23:59:59.999999999")) ==
             "23:59:59.999999999");
   }
+
+  BENCHMARK("parse zeros") {
+      return parseTimecode("00:00:00.00000");
+  };
 }
